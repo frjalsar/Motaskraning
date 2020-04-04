@@ -299,11 +299,11 @@ namespace MotaskraningWeb.Controllers
             List<Domari> domarar = new List<Domari>();
 
             Domari doni = new Domari();
-            doni.nafn = "Gummisen";
+            doni.nafn = "domari1";
             domarar.Add(doni);
 
             Domari doni2 = new Domari();
-            doni2.nafn = "Gummisen2";
+            doni2.nafn = "domari2";
             domarar.Add(doni2);
 
             return (domarar);
