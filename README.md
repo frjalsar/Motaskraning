@@ -1,0 +1,2 @@
+# Motaskraning
+Repository fyrir mótaskráningarforrit
