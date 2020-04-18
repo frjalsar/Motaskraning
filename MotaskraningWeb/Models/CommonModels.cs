@@ -93,4 +93,12 @@ namespace MotaskraningWeb.Models
         public string? EventCodeForRegistration { get; set; }
     }
 
+    public class Judge
+    {
+        public string? id { get; set; }
+        public string? fullname { get; set; }
+        public DateTime? date { get; set; }
+        public int? clubid { get; set; }
+    }
+
 }

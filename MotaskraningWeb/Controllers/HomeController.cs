@@ -298,13 +298,16 @@ namespace MotaskraningWeb.Controllers
         {
             List<Domari> domarar = new List<Domari>();
 
-            Domari doni = new Domari();
-            doni.nafn = "domari1";
-            domarar.Add(doni);
+            string url = "https://api.fri.is/judges";
+            var res = GetFunction(url);
+            var judges = JsonConvert.DeserializeObject<List<Judge>>(res);
 
-            Domari doni2 = new Domari();
-            doni2.nafn = "domari2";
-            domarar.Add(doni2);
+            for (int i = 0; i < judges.Count; i++)
+            {
+                Domari dommi = new Domari();
+                dommi.nafn = judges[i].fullname;
+                domarar.Add(dommi);
+            }
 
             return (domarar);
         }
