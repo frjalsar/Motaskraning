@@ -315,9 +315,23 @@ namespace MotaskraningWeb.Controllers
         public List<string> NaIStadsetningar()
         {
             List<string> stadsetningar = new List<string>();
+            
+            string url = "https://api.fri.is/venues";
+            var res = GetFunction(url);
+            var places = JsonConvert.DeserializeObject<List<venue>>(res);
 
-            stadsetningar.Add("Kaplakriki");
-            stadsetningar.Add("Laugardalshöll");
+            for (int i = 0; i < places.Count; i++)
+            {
+                string strengurinn = "";
+                if(places[i].indoor == false)
+                {
+                    strengurinn = places[i].fullName + ";úti";
+                } else if (places[i].indoor == true)
+                {
+                    strengurinn = places[i].fullName + ";inni";
+                }
+                stadsetningar.Add(strengurinn);
+            }
 
             return (stadsetningar);
         }

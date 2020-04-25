@@ -5,6 +5,26 @@ using System.Threading.Tasks;
 
 namespace MotaskraningWeb.Models
 {
+    public class venue
+    {
+        public int? id { get; set; }
+        public string? fullName { get; set; }
+        public bool? indoor { get; set; }
+        public bool? banked { get; set; }
+        public int? straightLanes { get; set; }
+        public int? ovalLanes { get; set; }
+        public int? longTripleJump { get; set; }
+        public int? polevault { get; set; }
+        public int? hammerDiscus { get; set; }
+        public int? javelin { get; set; }
+        public int? shotPut { get; set; }
+        public string? material { get; set; }
+        public int? constructionYear { get; set; }
+        public int? renovationYear { get; set; }
+        public bool? warmupTrack { get; set; }
+        public bool? throwingField { get; set; }
+        public bool? certification { get; set; }
+    }
     public class Domari
     {
         public string nafn { get; set; }
@@ -25,6 +45,8 @@ namespace MotaskraningWeb.Models
 
     public class Skraning
     {
+        public DateTime DagsFra { get; set; }
+        public DateTime DagsTil { get; set; }
         public string motshaldari { get; set; }
         public string stadsetning { get; set; }
         public string domari { get; set; }

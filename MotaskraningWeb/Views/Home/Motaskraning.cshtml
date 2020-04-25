@@ -17,6 +17,10 @@
     <a>Dómari: </a>
     <input value="Go!" onclick="" />
 </div -->
+<!--link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">-->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
 
 <div class="container-fluid">
     <div class="row">
@@ -26,18 +30,24 @@
 
                 // @Html.HiddenFor(model => model.EmpID)
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.skraning.motshaldari, "Mótshaldari")
-                @Html.DropDownListFor(model => model.skraning.motshaldari, ViewBag.CityList2 as SelectList, new { @class = "form-control" })
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.skraning.stadsetning, "staðsetning")
-                @Html.DropDownListFor(model => model.skraning.stadsetning, ViewBag.CityList3 as SelectList, new { @class = "form-control" })
-            </div>
+                <div class="form-group input-group-sm">
+                    @Html.LabelFor(model => model.skraning.DagsFra)
+                    @Html.TextBoxFor(model => model.skraning.DagsFra, new { @class = "form-control datepicker", placeholder = "Enter Drop-off date here..." })
+                    @Html.ValidationMessageFor(model => model.skraning.DagsFra)
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.skraning.motshaldari, "Mótshaldari")
+                    @Html.DropDownListFor(model => model.skraning.motshaldari, ViewBag.CityList2 as SelectList, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.skraning.stadsetning, "staðsetning")
+                    @Html.DropDownListFor(model => model.skraning.stadsetning, ViewBag.CityList3 as SelectList, new { @class = "form-control" })
+                </div>
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.skraning.domari, "Dómari")
-                    @Html.DropDownListFor(model => model.skraning.domari, ViewBag.CityList as SelectList, new { @class = "form-control"})
+                    @Html.DropDownListFor(model => model.skraning.domari, ViewBag.CityList as SelectList, new { @class = "form-control" })
                 </div>
 
                 <table id="children">
@@ -50,7 +60,8 @@
                         <tr>
                             <td><strong>Greinar:</strong></td>
                         </tr>
-                        @if(Model.skraning.greinar != null) { 
+                        @if (Model.skraning.greinar != null)
+                        {
                             @foreach (var grein in Model.skraning.greinar)
                             {
                                 <tr>
@@ -70,10 +81,14 @@
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
 
 <script type="text/javascript">
-    
+
+    /*$(function () { // will trigger when the document is ready
+       $('.datepicker').datepicker(); //Initialise any date pickers
+    });*/
+
 
     function AddOne() {
 
