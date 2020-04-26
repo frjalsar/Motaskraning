@@ -26,7 +26,69 @@ namespace MotaskraningWeb.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            List<Domari> Domarar = NaIDomara();
+            List<Grein> Greinar = NaIGreinar();
+            List<string> Haldarar = NaIMotshaldara();
+            List<string> Stadsetningar = NaIStadsetningar();
+
+            MotaskraningModel model = new MotaskraningModel();
+
+            model.Domarar = Domarar;
+            model.Greinar = Greinar;
+            model.skraning = new Skraning();
+
+
+
+            List<SelectListItem> listi = new List<SelectListItem>();
+            foreach (Domari dom in Domarar)
+            {
+                listi.Add(new SelectListItem()
+                {
+                    Text = dom.nafn,
+                    Value = dom.nafn
+                });
+            }
+            SelectList val = new SelectList(listi, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi2 = new List<SelectListItem>();
+            foreach (string dom in Haldarar)
+            {
+                listi2.Add(new SelectListItem()
+                {
+                    Text = dom,
+                    Value = dom
+                });
+            }
+            SelectList val2 = new SelectList(listi2, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi3 = new List<SelectListItem>();
+            foreach (string dom in Stadsetningar)
+            {
+                listi3.Add(new SelectListItem()
+                {
+                    Text = dom,
+                    Value = dom
+                });
+            }
+            SelectList val3 = new SelectList(listi3, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi4 = new List<SelectListItem>();
+            foreach (Grein dom in Greinar)
+            {
+                listi4.Add(new SelectListItem()
+                {
+                    Text = dom.nafnGreinar,
+                    Value = dom.nafnGreinar
+                });
+            }
+            SelectList val4 = new SelectList(listi4, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            ViewBag.CityList = val;
+            ViewBag.CityList2 = val2;
+            ViewBag.CityList3 = val3;
+            ViewBag.CityList4 = val4;
+
+            return View(model);
         }
 
         public IActionResult Motaskraning()
