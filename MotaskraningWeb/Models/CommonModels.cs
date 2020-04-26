@@ -123,4 +123,10 @@ namespace MotaskraningWeb.Models
         public int? clubid { get; set; }
     }
 
+    public class TextValueHolder
+    {
+        public string Text { get; set; }
+        public string Value { get; set; }
+    }
+
 }

@@ -25,7 +25,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            @using (Html.BeginForm("Motaskraning", "Home", FormMethod.Post))
+            @using (Html.BeginForm("Index", "Home", FormMethod.Post))
             {
 
                 // @Html.HiddenFor(model => model.EmpID)
@@ -42,7 +42,8 @@
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.skraning.stadsetning, "staðsetning")
-                    @Html.DropDownListFor(model => model.skraning.stadsetning, ViewBag.CityList3 as SelectList, new { @class = "form-control" })
+                    @Html.DropDownListFor(model => model.skraning.stadsetning, new SelectList(ViewBag.CityList3, "Value", "Text", new { @id="dropdown"}), new { @class = "form-control" }) 
+                   
                 </div>
 
                 <div class="form-group">

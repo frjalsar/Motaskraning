@@ -29,7 +29,7 @@ namespace MotaskraningWeb.Controllers
             List<Domari> Domarar = NaIDomara();
             List<Grein> Greinar = NaIGreinar();
             List<string> Haldarar = NaIMotshaldara();
-            List<string> Stadsetningar = NaIStadsetningar();
+            List<TextValueHolder> Stadsetningar = NaIStadsetningar();
 
             MotaskraningModel model = new MotaskraningModel();
 
@@ -62,12 +62,12 @@ namespace MotaskraningWeb.Controllers
             SelectList val2 = new SelectList(listi2, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
 
             List<SelectListItem> listi3 = new List<SelectListItem>();
-            foreach (string dom in Stadsetningar)
+            foreach (TextValueHolder dom in Stadsetningar)
             {
                 listi3.Add(new SelectListItem()
                 {
-                    Text = dom,
-                    Value = dom
+                    Text = dom.Text, // dom,
+                    Value = dom.Value // dom
                 });
             }
             SelectList val3 = new SelectList(listi3, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
@@ -91,7 +91,7 @@ namespace MotaskraningWeb.Controllers
             return View(model);
         }
 
-        public IActionResult Motaskraning()
+        /*public IActionResult Motaskraning()
         {
             List<Domari> Domarar = NaIDomara();
             List<Grein> Greinar = NaIGreinar();
@@ -156,10 +156,10 @@ namespace MotaskraningWeb.Controllers
             ViewBag.CityList4 = val4;
 
             return View(model);
-        }
+        }*/
 
         [HttpPost]
-        public ActionResult Motaskraning(MotaskraningModel empmodel)
+        public ActionResult Index(MotaskraningModel empmodel)
         {
             // Gera eithvað við upplýsingarnar
             // Kalla á SendToJira fall með upplýsingunum úr epmodel
@@ -227,7 +227,7 @@ namespace MotaskraningWeb.Controllers
             List<Domari> Domarar = NaIDomara();
             List<Grein> Greinar = NaIGreinar();
             List<string> Haldarar = NaIMotshaldara();
-            List<string> Stadsetningar = NaIStadsetningar();
+            List<TextValueHolder> Stadsetningar = NaIStadsetningar();
 
             MotaskraningModel model = new MotaskraningModel();
 
@@ -260,12 +260,12 @@ namespace MotaskraningWeb.Controllers
             SelectList val2 = new SelectList(listi2, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
 
             List<SelectListItem> listi3 = new List<SelectListItem>();
-            foreach (string dom in Stadsetningar)
+            foreach (TextValueHolder dom in Stadsetningar)
             {
                 listi3.Add(new SelectListItem()
                 {
-                    Text = dom,
-                    Value = dom
+                    Text = dom.Text,
+                    Value = dom.Value
                 });
             }
             SelectList val3 = new SelectList(listi3, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
@@ -294,7 +294,7 @@ namespace MotaskraningWeb.Controllers
             List<Domari> Domarar = NaIDomara();
             List<Grein> Greinar = NaIGreinar();
             List<string> Haldarar = NaIMotshaldara();
-            List<string> Stadsetningar = NaIStadsetningar();
+            List<TextValueHolder> Stadsetningar = NaIStadsetningar();
 
             MotaskraningModel model = new MotaskraningModel();
 
@@ -327,12 +327,12 @@ namespace MotaskraningWeb.Controllers
             SelectList val2 = new SelectList(listi2, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
 
             List<SelectListItem> listi3 = new List<SelectListItem>();
-            foreach (string dom in Stadsetningar)
+            foreach (TextValueHolder dom in Stadsetningar)
             {
                 listi3.Add(new SelectListItem()
                 {
-                    Text = dom,
-                    Value = dom
+                    Text = dom.Text,
+                    Value = dom.Value
                 });
             }
             SelectList val3 = new SelectList(listi3, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
@@ -374,9 +374,9 @@ namespace MotaskraningWeb.Controllers
             return (domarar);
         }
 
-        public List<string> NaIStadsetningar()
+        public List<TextValueHolder> NaIStadsetningar()
         {
-            List<string> stadsetningar = new List<string>();
+            List<TextValueHolder> stadsetningar = new List<TextValueHolder>();
             
             string url = "https://api.fri.is/venues";
             var res = GetFunction(url);
@@ -392,7 +392,12 @@ namespace MotaskraningWeb.Controllers
                 {
                     strengurinn = places[i].fullName + ";inni";
                 }
-                stadsetningar.Add(strengurinn);
+
+                TextValueHolder stadsetning = new TextValueHolder();
+                stadsetning.Text = places[i].fullName;
+                stadsetning.Value = strengurinn;
+
+                stadsetningar.Add(stadsetning);
             }
 
             return (stadsetningar);
