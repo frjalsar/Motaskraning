@@ -27,14 +27,14 @@ namespace MotaskraningWeb.Controllers
         public IActionResult Index()
         {
             List<Domari> Domarar = NaIDomara();
-            List<Grein> Greinar = NaIGreinar();
+            List<List<TextValueHolder>> Greinar = NaIGreinar();
             List<string> Haldarar = NaIMotshaldara();
             List<TextValueHolder> Stadsetningar = NaIStadsetningar();
 
             MotaskraningModel model = new MotaskraningModel();
 
-            model.Domarar = Domarar;
-            model.Greinar = Greinar;
+            // model.Domarar = Domarar;
+            // model.Greinar = Greinar;
             model.skraning = new Skraning();
 
 
@@ -73,20 +73,58 @@ namespace MotaskraningWeb.Controllers
             SelectList val3 = new SelectList(listi3, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
 
             List<SelectListItem> listi4 = new List<SelectListItem>();
-            foreach (Grein dom in Greinar)
+            foreach (TextValueHolder dom in Greinar[0])
             {
                 listi4.Add(new SelectListItem()
                 {
-                    Text = dom.nafnGreinar,
-                    Value = dom.nafnGreinar
+                    Text = dom.Text,
+                    Value = dom.Value
                 });
             }
             SelectList val4 = new SelectList(listi4, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
 
+            List<SelectListItem> listi5 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Greinar[1])
+            {
+                listi5.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val5 = new SelectList(listi5, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi6 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Greinar[2])
+            {
+                listi6.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val6 = new SelectList(listi6, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi7 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Greinar[3])
+            {
+                listi7.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val7 = new SelectList(listi7, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+
             ViewBag.CityList = val;
             ViewBag.CityList2 = val2;
             ViewBag.CityList3 = val3;
-            ViewBag.CityList4 = val4;
+
+            ViewBag.GreinarInniKarla = val4;
+            ViewBag.GreinarInniKvenna = val5;
+            ViewBag.GreinarUtiKarla = val6;
+            ViewBag.GreinarUtiKvenna = val7;
 
             return View(model);
         }
@@ -225,14 +263,14 @@ namespace MotaskraningWeb.Controllers
 
 
             List<Domari> Domarar = NaIDomara();
-            List<Grein> Greinar = NaIGreinar();
+            List<List<TextValueHolder>> Greinar = NaIGreinar();
             List<string> Haldarar = NaIMotshaldara();
             List<TextValueHolder> Stadsetningar = NaIStadsetningar();
 
             MotaskraningModel model = new MotaskraningModel();
 
-            model.Domarar = Domarar;
-            model.Greinar = Greinar;
+            //model.Domarar = Domarar;
+            //model.Greinar = Greinar;
             model.skraning = new Skraning();
 
 
@@ -271,20 +309,58 @@ namespace MotaskraningWeb.Controllers
             SelectList val3 = new SelectList(listi3, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
 
             List<SelectListItem> listi4 = new List<SelectListItem>();
-            foreach (Grein dom in Greinar)
+            foreach (TextValueHolder dom in Greinar[0])
             {
                 listi4.Add(new SelectListItem()
                 {
-                    Text = dom.nafnGreinar,
-                    Value = dom.nafnGreinar
+                    Text = dom.Text,
+                    Value = dom.Value
                 });
             }
             SelectList val4 = new SelectList(listi4, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
 
+            List<SelectListItem> listi5 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Greinar[1])
+            {
+                listi5.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val5 = new SelectList(listi5, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi6 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Greinar[2])
+            {
+                listi6.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val6 = new SelectList(listi6, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi7 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Greinar[3])
+            {
+                listi7.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val7 = new SelectList(listi7, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+
             ViewBag.CityList = val;
             ViewBag.CityList2 = val2;
             ViewBag.CityList3 = val3;
-            ViewBag.CityList4 = val4;
+
+            ViewBag.GreinarInniKarla = val4;
+            ViewBag.GreinarInniKvenna = val5;
+            ViewBag.GreinarUtiKarla = val6;
+            ViewBag.GreinarUtiKvenna = val7;
 
             return View(model);
         }
@@ -292,14 +368,14 @@ namespace MotaskraningWeb.Controllers
         public ActionResult AddChild()
         {
             List<Domari> Domarar = NaIDomara();
-            List<Grein> Greinar = NaIGreinar();
+            List<List<TextValueHolder>> Greinar = NaIGreinar();
             List<string> Haldarar = NaIMotshaldara();
             List<TextValueHolder> Stadsetningar = NaIStadsetningar();
 
             MotaskraningModel model = new MotaskraningModel();
 
-            model.Domarar = Domarar;
-            model.Greinar = Greinar;
+            // model.Domarar = Domarar;
+            // model.Greinar = Greinar;
             model.skraning = new Skraning();
 
 
@@ -338,22 +414,375 @@ namespace MotaskraningWeb.Controllers
             SelectList val3 = new SelectList(listi3, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
 
             List<SelectListItem> listi4 = new List<SelectListItem>();
-            foreach (Grein dom in Greinar)
+            foreach (TextValueHolder dom in Greinar[0])
             {
                 listi4.Add(new SelectListItem()
                 {
-                    Text = dom.nafnGreinar,
-                    Value = dom.nafnGreinar
+                    Text = dom.Text,
+                    Value = dom.Value
                 });
             }
             SelectList val4 = new SelectList(listi4, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
 
+            List<SelectListItem> listi5 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Greinar[1])
+            {
+                listi5.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val5 = new SelectList(listi5, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi6 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Greinar[2])
+            {
+                listi6.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val6 = new SelectList(listi6, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi7 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Greinar[3])
+            {
+                listi7.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val7 = new SelectList(listi7, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+
             ViewBag.CityList = val;
             ViewBag.CityList2 = val2;
             ViewBag.CityList3 = val3;
-            ViewBag.CityList4 = val4;
+
+            ViewBag.GreinarInniKarla = val4;
+            ViewBag.GreinarInniKvenna = val5;
+            ViewBag.GreinarUtiKarla = val6;
+            ViewBag.GreinarUtiKvenna = val7;
 
             return PartialView("_Grein", new Grein());
+        }
+
+        public ActionResult AddChild2()
+        {
+            List<Domari> Domarar = NaIDomara();
+            List<List<TextValueHolder>> Greinar = NaIGreinar();
+            List<string> Haldarar = NaIMotshaldara();
+            List<TextValueHolder> Stadsetningar = NaIStadsetningar();
+
+            MotaskraningModel model = new MotaskraningModel();
+
+            // model.Domarar = Domarar;
+            // model.Greinar = Greinar;
+            model.skraning = new Skraning();
+
+
+
+            List<SelectListItem> listi = new List<SelectListItem>();
+            foreach (Domari dom in Domarar)
+            {
+                listi.Add(new SelectListItem()
+                {
+                    Text = dom.nafn,
+                    Value = dom.nafn
+                });
+            }
+            SelectList val = new SelectList(listi, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi2 = new List<SelectListItem>();
+            foreach (string dom in Haldarar)
+            {
+                listi2.Add(new SelectListItem()
+                {
+                    Text = dom,
+                    Value = dom
+                });
+            }
+            SelectList val2 = new SelectList(listi2, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi3 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Stadsetningar)
+            {
+                listi3.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val3 = new SelectList(listi3, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi4 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Greinar[0])
+            {
+                listi4.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val4 = new SelectList(listi4, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi5 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Greinar[1])
+            {
+                listi5.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val5 = new SelectList(listi5, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi6 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Greinar[2])
+            {
+                listi6.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val6 = new SelectList(listi6, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi7 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Greinar[3])
+            {
+                listi7.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val7 = new SelectList(listi7, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+
+            ViewBag.CityList = val;
+            ViewBag.CityList2 = val2;
+            ViewBag.CityList3 = val3;
+
+            ViewBag.GreinarInniKarla = val4;
+            ViewBag.GreinarInniKvenna = val5;
+            ViewBag.GreinarUtiKarla = val6;
+            ViewBag.GreinarUtiKvenna = val7;
+
+            return PartialView("_Grein2", new Grein());
+        }
+
+        public ActionResult AddChild3()
+        {
+            List<Domari> Domarar = NaIDomara();
+            List<List<TextValueHolder>> Greinar = NaIGreinar();
+            List<string> Haldarar = NaIMotshaldara();
+            List<TextValueHolder> Stadsetningar = NaIStadsetningar();
+
+            MotaskraningModel model = new MotaskraningModel();
+
+            // model.Domarar = Domarar;
+            // model.Greinar = Greinar;
+            model.skraning = new Skraning();
+
+
+
+            List<SelectListItem> listi = new List<SelectListItem>();
+            foreach (Domari dom in Domarar)
+            {
+                listi.Add(new SelectListItem()
+                {
+                    Text = dom.nafn,
+                    Value = dom.nafn
+                });
+            }
+            SelectList val = new SelectList(listi, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi2 = new List<SelectListItem>();
+            foreach (string dom in Haldarar)
+            {
+                listi2.Add(new SelectListItem()
+                {
+                    Text = dom,
+                    Value = dom
+                });
+            }
+            SelectList val2 = new SelectList(listi2, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi3 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Stadsetningar)
+            {
+                listi3.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val3 = new SelectList(listi3, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi4 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Greinar[0])
+            {
+                listi4.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val4 = new SelectList(listi4, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi5 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Greinar[1])
+            {
+                listi5.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val5 = new SelectList(listi5, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi6 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Greinar[2])
+            {
+                listi6.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val6 = new SelectList(listi6, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi7 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Greinar[3])
+            {
+                listi7.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val7 = new SelectList(listi7, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+
+            ViewBag.CityList = val;
+            ViewBag.CityList2 = val2;
+            ViewBag.CityList3 = val3;
+
+            ViewBag.GreinarInniKarla = val4;
+            ViewBag.GreinarInniKvenna = val5;
+            ViewBag.GreinarUtiKarla = val6;
+            ViewBag.GreinarUtiKvenna = val7;
+
+            return PartialView("_Grein3", new Grein());
+        }
+
+        public ActionResult AddChild4()
+        {
+            List<Domari> Domarar = NaIDomara();
+            List<List<TextValueHolder>> Greinar = NaIGreinar();
+            List<string> Haldarar = NaIMotshaldara();
+            List<TextValueHolder> Stadsetningar = NaIStadsetningar();
+
+            MotaskraningModel model = new MotaskraningModel();
+
+            // model.Domarar = Domarar;
+            // model.Greinar = Greinar;
+            model.skraning = new Skraning();
+
+
+
+            List<SelectListItem> listi = new List<SelectListItem>();
+            foreach (Domari dom in Domarar)
+            {
+                listi.Add(new SelectListItem()
+                {
+                    Text = dom.nafn,
+                    Value = dom.nafn
+                });
+            }
+            SelectList val = new SelectList(listi, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi2 = new List<SelectListItem>();
+            foreach (string dom in Haldarar)
+            {
+                listi2.Add(new SelectListItem()
+                {
+                    Text = dom,
+                    Value = dom
+                });
+            }
+            SelectList val2 = new SelectList(listi2, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi3 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Stadsetningar)
+            {
+                listi3.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val3 = new SelectList(listi3, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi4 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Greinar[0])
+            {
+                listi4.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val4 = new SelectList(listi4, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi5 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Greinar[1])
+            {
+                listi5.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val5 = new SelectList(listi5, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi6 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Greinar[2])
+            {
+                listi6.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val6 = new SelectList(listi6, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+            List<SelectListItem> listi7 = new List<SelectListItem>();
+            foreach (TextValueHolder dom in Greinar[3])
+            {
+                listi7.Add(new SelectListItem()
+                {
+                    Text = dom.Text,
+                    Value = dom.Value
+                });
+            }
+            SelectList val7 = new SelectList(listi7, "Value", "Text"); // (Greinar, "nafnGreinar", "gerdGreinar");
+
+
+            ViewBag.CityList = val;
+            ViewBag.CityList2 = val2;
+            ViewBag.CityList3 = val3;
+
+            ViewBag.GreinarInniKarla = val4;
+            ViewBag.GreinarInniKvenna = val5;
+            ViewBag.GreinarUtiKarla = val6;
+            ViewBag.GreinarUtiKvenna = val7;
+
+            return PartialView("_Grein4", new Grein());
         }
 
         public List<Domari> NaIDomara()
@@ -423,8 +852,15 @@ namespace MotaskraningWeb.Controllers
             return (haldarar);
         }
 
-        public List<Grein> NaIGreinar()
+        public List<List<TextValueHolder>> NaIGreinar()
         {
+            List<List<TextValueHolder>> returnValue = new List<List<TextValueHolder>>();
+
+            List<TextValueHolder> InniKarla = new List<TextValueHolder>();
+            List<TextValueHolder> InniKvenna = new List<TextValueHolder>();
+            List<TextValueHolder> UtiKarla = new List<TextValueHolder>();
+            List<TextValueHolder> UtiKvenna = new List<TextValueHolder>();
+
             string url = "https://api.fri.is/thor/events";
             var res = GetFunction(url);
             var greinar = JsonConvert.DeserializeObject<List<events>>(res);
@@ -436,37 +872,71 @@ namespace MotaskraningWeb.Controllers
                 string samsettur = greinar[i].CompoundKey;
                 string[] splittadur = samsettur.Split(";");
                 string heildarstrengur = splittadur[0] + ";";
+                string TextString = splittadur[0] + " ";
+
                 if (splittadur[1] == "1")
                 {
                     heildarstrengur += "kvenna;" + splittadur[2] + ";";
+                    TextString += "kvenna " + splittadur[2] + " ";
                 }
                 else
                 {
                     heildarstrengur += "karla;" + splittadur[2] + ";";
+                    TextString += "karla " + splittadur[2] + " ";
                 }
                 if (splittadur[3] == "0")
                 {
                     heildarstrengur += "úti";
+                    TextString += "úti";
                 }
                 else
                 {
                     heildarstrengur += "inni";
+                    TextString += "inni";
                 }
 
+                TextValueHolder textValue = new TextValueHolder();
 
-                /*if (greinar[i].Gender == 1)
+                textValue.Text = TextString;
+                textValue.Value = heildarstrengur;
+
+                if (splittadur[3] == "0") // Ef inni
                 {
-                    samsettur += "|kvenna";
+                    if (splittadur[1] == "1") // Ef kvenna
+                    {
+                        InniKvenna.Add(textValue);
+                    }
+                    else // Ef karla
+                    {
+                        InniKarla.Add(textValue);
+                    }
+
                 }
-                else
+                else // Ef úti
                 {
-                    samsettur += "|karla";
-                }*/
+                    if (splittadur[1] == "1") // Ef kvenna
+                    {
+                        UtiKvenna.Add(textValue);
+                    }
+                    else // Ef karla
+                    {
+                        UtiKarla.Add(textValue);
+                    }
+                }
+
+                
+
+                // returnValue.Add(textValue);
+
                 Grein a = new Grein();
                 a.nafnGreinar = heildarstrengur; // greinar[i].Id;
                 Greinar.Add(a);
             }
 
+            returnValue.Add(InniKarla);
+            returnValue.Add(InniKvenna);
+            returnValue.Add(UtiKarla);
+            returnValue.Add(UtiKvenna);
             
             /*
             Grein grein = new Grein();
@@ -478,7 +948,7 @@ namespace MotaskraningWeb.Controllers
             grein2.gerdGreinar = "hlaup";
             Greinar.Add(grein2);*/
 
-            return Greinar;
+            return returnValue;
         }
 
         public async void SendToJira(fieldHolder JiraDot)

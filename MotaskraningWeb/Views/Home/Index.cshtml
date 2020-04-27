@@ -42,8 +42,7 @@
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.skraning.stadsetning, "staðsetning")
-                    @Html.DropDownListFor(model => model.skraning.stadsetning, new SelectList(ViewBag.CityList3, "Value", "Text", new { @id="dropdown"}), new { @class = "form-control" }) 
-                   
+                    @Html.DropDownListFor(model => model.skraning.stadsetning, ViewBag.CityList3 as SelectList, new { @class = "form-control" })
                 </div>
 
                 <div class="form-group">
@@ -72,10 +71,13 @@
                         }
                     </tbody>
                 </table>
-
-                <button type="button" id="addChild" onclick="AddOne()">Bæta við grein</button>
-
-                <input type="submit" class="btn btn-primary " value="Submit" />
+                <strong>Bæta við grein: </strong>
+                <button type="button" class="btn btn-secondary" id="addChild" onclick="AddOne()">Úti Karla</button>
+                <button type="button" class="btn btn-secondary" id="addChild" onclick="AddOne2()">Úti Kvenna</button>
+                <button type="button" class="btn btn-secondary" id="addChild" onclick="AddOne3()">Inni Karla</button>
+                <button type="button" class="btn btn-secondary" id="addChild" onclick="AddOne4()">Inni Kvenna</button>
+                <br />
+                <input type="submit" class="btn btn-primary " value="Senda mót" />
 
             }
         </div>
@@ -106,5 +108,54 @@
             }
         });
     }
+
+    function AddOne2() {
+
+        $.ajax({
+             url: "@Url.Action("AddChild2", "Home")",
+            data: {
+            },
+            type: "Get",
+            dataType: "html",
+             success: function (data) {
+                //Whatever result you have got from your controller with html partial view replace with a specific html.
+                 $('#children> tbody:last-child').append(data);
+                 // $("#ThresholdmodalPartialView").html(data); // HTML DOM replace
+            }
+        });
+    }
+
+    function AddOne3() {
+
+        $.ajax({
+             url: "@Url.Action("AddChild3", "Home")",
+            data: {
+            },
+            type: "Get",
+            dataType: "html",
+             success: function (data) {
+                //Whatever result you have got from your controller with html partial view replace with a specific html.
+                 $('#children> tbody:last-child').append(data);
+                 // $("#ThresholdmodalPartialView").html(data); // HTML DOM replace
+            }
+        });
+    }
+
+    function AddOne4() {
+
+        $.ajax({
+             url: "@Url.Action("AddChild4", "Home")",
+            data: {
+            },
+            type: "Get",
+            dataType: "html",
+             success: function (data) {
+                //Whatever result you have got from your controller with html partial view replace with a specific html.
+                 $('#children> tbody:last-child').append(data);
+                 // $("#ThresholdmodalPartialView").html(data); // HTML DOM replace
+            }
+        });
+    }
+
 
 </script>

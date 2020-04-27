@@ -234,3 +234,6 @@ C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreap
 C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\MotaskraningWeb.csproj.CopyComplete
 C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\MotaskraningWeb.dll
 C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\MotaskraningWeb.pdb
+C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\_Grein2.cshtml.g.cs
+C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\_Grein3.cshtml.g.cs
+C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\_Grein4.cshtml.g.cs
