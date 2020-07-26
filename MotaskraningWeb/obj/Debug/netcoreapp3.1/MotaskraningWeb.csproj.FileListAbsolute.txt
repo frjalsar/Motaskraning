@@ -207,11 +207,8 @@ C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\bin\Debug\netcoreap
 C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\MotaskraningWeb.csprojAssemblyReference.cache
 C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\staticwebassets\MotaskraningWeb.StaticWebAssets.Manifest.cache
 C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\staticwebassets\MotaskraningWeb.StaticWebAssets.xml
-C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\MotaskraningWeb.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\MotaskraningWeb.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\MotaskraningWeb.RazorAssemblyInfo.cache
 C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\MotaskraningWeb.RazorAssemblyInfo.cs
 C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\MotaskraningWeb.AssemblyInfoInputs.cache
@@ -237,3 +234,8 @@ C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreap
 C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\_Grein2.cshtml.g.cs
 C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\_Grein3.cshtml.g.cs
 C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\_Grein4.cshtml.g.cs
+C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\MotaskraningWeb.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\MotaskraningWeb.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\MotaskraningWeb.csprojAssemblyReference.cache
+C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\MotaskraningWeb.csproj.CoreCompileInputs.cache
+C:\Users\Stein\Documents\GitHub\Motaskraning\MotaskraningWeb\obj\Debug\netcoreapp3.1\MotaskraningWeb.genruntimeconfig.cache

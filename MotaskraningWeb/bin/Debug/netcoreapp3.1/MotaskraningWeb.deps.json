@@ -26,6 +26,7 @@
         "dependencies": {
           "BeginCollectionItemCore": "1.0.8",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.1",
+          "jQuery.UI.Combined": "1.12.1",
           "Microsoft.AspNetCore.Antiforgery.Reference": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -329,6 +330,12 @@
         },
         "compile": {
           "lib/netstandard1.6/BeginCollectionItemCore.dll": {}
+        }
+      },
+      "jQuery/1.12.4": {},
+      "jQuery.UI.Combined/1.12.1": {
+        "dependencies": {
+          "jQuery": "1.12.4"
         }
       },
       "Microsoft.AspNetCore.Antiforgery/1.1.1": {
@@ -3948,6 +3955,20 @@
       "sha512": "sha512-gbp7JI3OskUteHBSAeI8eX0UnFtxAFjd7ZJg+Fr4czTCA7oiM++2FevjzMFP4L6auhNyduazpj44pX7M5fY4SQ==",
       "path": "begincollectionitemcore/1.0.8",
       "hashPath": "begincollectionitemcore.1.0.8.nupkg.sha512"
+    },
+    "jQuery/1.12.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pIYtWlFI5PGlJVB8jm9H96pAQ27jQhA9sCxMeGweeC3ByQRaB8BwkIuGdTt4go3IEKTmmfRC2y5k0FLFizWDQg==",
+      "path": "jquery/1.12.4",
+      "hashPath": "jquery.1.12.4.nupkg.sha512"
+    },
+    "jQuery.UI.Combined/1.12.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5B0LrPZ0TLlwplPRu43h7fgMtDxMMEF31HajUqHSOJ7bC6nyJUJy7AkcuGaJdBrrZAZutnSBgXT01BGiIIC4TQ==",
+      "path": "jquery.ui.combined/1.12.1",
+      "hashPath": "jquery.ui.combined.1.12.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Antiforgery/1.1.1": {
       "type": "package",

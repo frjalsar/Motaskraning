@@ -202,7 +202,7 @@ namespace MotaskraningWeb.Controllers
             // Gera eithvað við upplýsingarnar
             // Kalla á SendToJira fall með upplýsingunum úr epmodel
 
-            string upplysingar = empmodel.skraning.motshaldari + ";" + empmodel.skraning.stadsetning + ";" + empmodel.skraning.domari;
+            string upplysingar = empmodel.skraning.DagsFra + ";" + empmodel.skraning.DagsTil + ";" + empmodel.skraning.motshaldari + ";" + empmodel.skraning.stadsetning + ";" + empmodel.skraning.domari;
             if(empmodel.Greinar != null) { 
                 foreach(var grein in empmodel.Greinar)
                 {
