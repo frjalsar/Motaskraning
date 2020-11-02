@@ -47,7 +47,6 @@ namespace MotaskraningWeb2.Areas.Identity.Pages.Account
         public class InputModel
         {
             [Required]
-            [EmailAddress]
             public string Email { get; set; }
 
             [Required]
@@ -94,9 +93,11 @@ namespace MotaskraningWeb2.Areas.Identity.Pages.Account
             {
 
                 LoginHlutur hlutur = new LoginHlutur();
-                hlutur.username = "1907834139";
-                //hlutur.password = "Aq1Sw2De";
-                hlutur.password = "Aq1Sw2De";
+                hlutur.username = Input.Email;
+                hlutur.password = Input.Password;
+
+
+
 
                 var client = new HttpClient();
                 var result = await client.PostAsync("https://api.fri.is/user/login", new StringContent(JsonConvert.SerializeObject(hlutur), Encoding.UTF8, "application/json"));

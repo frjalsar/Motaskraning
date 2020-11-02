@@ -10531,11 +10531,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Stein\\source\\repos\\MotaskraningWeb2\\MotaskraningWeb2\\MotaskraningWeb2.csproj",
+      "projectUniqueName": "C:\\Users\\Stein\\Documents\\GitHub\\Motaskraning\\MotaskraningWeb2\\MotaskraningWeb2.csproj",
       "projectName": "MotaskraningWeb2",
-      "projectPath": "C:\\Users\\Stein\\source\\repos\\MotaskraningWeb2\\MotaskraningWeb2\\MotaskraningWeb2.csproj",
+      "projectPath": "C:\\Users\\Stein\\Documents\\GitHub\\Motaskraning\\MotaskraningWeb2\\MotaskraningWeb2.csproj",
       "packagesPath": "C:\\Users\\Stein\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Stein\\source\\repos\\MotaskraningWeb2\\MotaskraningWeb2\\obj\\",
+      "outputPath": "C:\\Users\\Stein\\Documents\\GitHub\\Motaskraning\\MotaskraningWeb2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Stein\\AppData\\Roaming\\NuGet\\NuGet.Config",
