@@ -1,3 +1,16 @@
 
 MotaskraningWeb2/.vs/MotaskraningWeb2/v16/.suo
 *.v2
+*.cache
+*.exe
+*.cache
+*.props
+*.json
+bin/
+obj/
+MotaskraningWeb2/obj/Debug/netcoreapp3.1/MotaskraningWeb2.assets.cache
+MotaskraningWeb2/obj/Debug/netcoreapp3.1/MotaskraningWeb2.csprojAssemblyReference.cache
+MotaskraningWeb2/obj/MotaskraningWeb2.csproj.nuget.dgspec.json
+MotaskraningWeb2/obj/MotaskraningWeb2.csproj.nuget.g.props
+MotaskraningWeb2/obj/project.assets.json
+MotaskraningWeb2/obj/project.nuget.cache
